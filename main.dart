@@ -1,5 +1,8 @@
 import 'functions.dart';
 
 main() {
-  print(fatArrow(15.5, 50));
+  print(normalFun(14, 15));
+  print(fatArrowFun(15.5, 50));
+  print(lemdaFun(15, 5));
+  lexicalFun(15);
 }
