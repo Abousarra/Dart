@@ -18,7 +18,6 @@ main() {
 
   //Classes
   print('********************** Classes ********************');
-  Student st1 = Student();
-  st1.name = 'Abou';
+  Student st1 = Student('El Ghazali');
   st1.myPrint();
 }
