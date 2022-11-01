@@ -46,3 +46,7 @@ paramOptionalFun(x, y, [z = 0, w = 0]) {
 paramNamedFun({x = 0, y = 0}) {
   return x + y;
 }
+
+towNumAfterVirguel(double x) {
+  return x.toStringAsFixed(2);
+}
