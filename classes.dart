@@ -23,3 +23,21 @@ class ConstFinal {
 
   const ConstFinal(this.x);
 }
+
+class Colors {
+  final int red;
+  final int green;
+  final int blue;
+
+//46.46. Dart Named Constructor and Initializer List
+  Colors(this.red, this.green, this.blue){
+    print('constr normal');
+  }
+
+  Colors.black()
+      : red = 0,
+        green = 0,
+        blue = 0 {
+          print('constr named');
+        }
+}

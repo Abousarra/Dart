@@ -37,4 +37,9 @@ main() {
   var cf1 = const ConstFinal(14);
   var cf2 = const ConstFinal(14);
   print(cf1 == cf2);
+
+  var w = Colors(233, 211, 111);
+  var b = Colors.black();
+
+  
 }
