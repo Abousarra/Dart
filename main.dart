@@ -41,5 +41,17 @@ main() {
   var w = Colors(233, 211, 111);
   var b = Colors.black();
 
-  
+  var b1 = Coloreurs.black();
+
+  var b2 = MyColors('dd');
+
+  //Using Static Field
+  var sing2 = Singleton.inst;
+  //Using Factory Constructor
+  var sing1 = Singleton();
+  //Using Getter
+  //var sing3 = Singleton.getInistence;
+  var a = sing2.getInistence;
+  var c = sing1.getInistence;
+  print(identical(a, c));
 }
