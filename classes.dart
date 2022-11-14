@@ -119,77 +119,115 @@ class Singleton {
   Singleton.my() {
     print('Singleton');
   }
-
 }
 
-class Shape{
-  // instence variable
-  String color; 
+//inheritence
+class Shape {
+  // instence variable // inherite
+  String color;
+  double radiaus;
+  int shadow = 89;
   // static instence variable
-  static bool border = true; 
+  static bool border = true;
   //Controller default
-  Shape(this.color){
+  Shape(this.color, this.radiaus) {
     print('Controller default');
-  } 
+  }
   //Controller named
-  Shape.color(this.color){
+  Shape.color(this.color, this.radiaus) {
     print('Controller named');
   }
-  // instence method
-  printColor(){
+  // instence method // inherite
+  printColor() {
     print("Color is $color");
   }
+
+  printRadiaus() {
+    print("Radiaus Shape");
+  }
+
   // instence static method
-  static printBorder(){
+  static printBorder() {
     print('Border is $border');
   }
 }
 
-class Circle extends Shape{
-  double redius;
-  Circle(this.redius,String color):super(color);
+//inherite by extends(Shape is class) //// pas besoin de implimente instence methodes ou instence variables
+//****** class extends only one class */
+class Circle extends Shape {
+  String color;
+  double radiaus;
+  Circle(this.color, this.radiaus) : super(color, radiaus);
 
   @override
   printColor() {
     print('override');
     return super.printColor();
   }
-  
+
+  myCircle() {}
 }
 
-class Triangle implements Shape{
+//inherite by implements (Shape is interface) //// obligatoire de implimente
+//tous instence methodes et instence variables (@override)
+//****** class imlements more class */
+class Triangle implements Shape,Persons {
   @override
-  String color ='Green';
+  String color;
 
   @override
-  printColor() {
-    print('Color is $color');
+  double radiaus;
+
+  @override
+  int shadow;
+
+  Triangle(this.color,this.radiaus,this.shadow){
+    print('Constructor');
+  }
+
+  @override
+  printColor() {}
+
+  @override
+  printRadiaus() {
+    print('Radius tri');
+  }
+
+  myTriangle() {
+    print("myTriangle");
+  }
+
+
+  @override
+  printAge() {
+    
+  }
+
+  @override
+  printName() {
+    
   }
 }
 
-abstract class Persons{
+//Abstruct classes //// start
+abstract class Persons {
   printName();
   printAge();
 }
 
-class professeurs extends Persons{
+class professeurs extends Persons {
   @override
-  printAge() {
-    throw UnimplementedError();
-  }
+  printAge() {}
 
   @override
-  printName() {
-    throw UnimplementedError();
-  }
-
+  printName() {}
 }
 
-abstract class etudiants extends Persons{
+abstract class etudiants extends Persons {
   @override
   printName() {
     print("object");
   }
-  
 }
 
+//Abstruct classes //// end

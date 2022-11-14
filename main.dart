@@ -56,13 +56,12 @@ main() {
   print(identical(a, c));
   //Inheritence
   print('********************** Inheritence ********************');
-  Circle circle = Circle(12, 'red');
-  circle.printColor();
-  Shape.printBorder();
+  Circle circle = Circle('green', 34.9);
+  circle.printRadiaus();
+  print(circle.shadow);
 
-  Triangle tr = Triangle();
-  tr.printColor();
-
-  professeurs pr = professeurs();
-  //etudiants et = etudiants();
+  Triangle tr = Triangle('blue',23,55);
+  tr.printRadiaus();
+  tr.myTriangle();
+  print(tr.shadow);
 }
