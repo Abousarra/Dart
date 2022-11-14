@@ -54,4 +54,15 @@ main() {
   var a = sing2.getInistence;
   var c = sing1.getInistence;
   print(identical(a, c));
+  //Inheritence
+  print('********************** Inheritence ********************');
+  Circle circle = Circle(12, 'red');
+  circle.printColor();
+  Shape.printBorder();
+
+  Triangle tr = Triangle();
+  tr.printColor();
+
+  professeurs pr = professeurs();
+  //etudiants et = etudiants();
 }

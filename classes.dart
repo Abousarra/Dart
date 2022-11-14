@@ -119,4 +119,77 @@ class Singleton {
   Singleton.my() {
     print('Singleton');
   }
+
 }
+
+class Shape{
+  // instence variable
+  String color; 
+  // static instence variable
+  static bool border = true; 
+  //Controller default
+  Shape(this.color){
+    print('Controller default');
+  } 
+  //Controller named
+  Shape.color(this.color){
+    print('Controller named');
+  }
+  // instence method
+  printColor(){
+    print("Color is $color");
+  }
+  // instence static method
+  static printBorder(){
+    print('Border is $border');
+  }
+}
+
+class Circle extends Shape{
+  double redius;
+  Circle(this.redius,String color):super(color);
+
+  @override
+  printColor() {
+    print('override');
+    return super.printColor();
+  }
+  
+}
+
+class Triangle implements Shape{
+  @override
+  String color ='Green';
+
+  @override
+  printColor() {
+    print('Color is $color');
+  }
+}
+
+abstract class Persons{
+  printName();
+  printAge();
+}
+
+class professeurs extends Persons{
+  @override
+  printAge() {
+    throw UnimplementedError();
+  }
+
+  @override
+  printName() {
+    throw UnimplementedError();
+  }
+
+}
+
+abstract class etudiants extends Persons{
+  @override
+  printName() {
+    print("object");
+  }
+  
+}
+
