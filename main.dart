@@ -60,8 +60,23 @@ main() {
   circle.printRadiaus();
   print(circle.shadow);
 
-  Triangle tr = Triangle('blue',23,55);
+  Triangle tr = Triangle('blue', 23, 55);
   tr.printRadiaus();
   tr.myTriangle();
   print(tr.shadow);
+
+  professeurs person = professeurs(15);
+  person.printAdress();
+
+  // 94.94. Dart Polymorphism
+  shapeArea(MyShape myShape) {
+    print('Area is ${myShape.area} Mµ');
+  }
+
+  shapeArea(MyCircle(radius: 10));
+  shapeArea(MyTriangle(hight: 140, width: 17));
+  shapeArea(MyTriangle());
+
+  Test test = Test();
+  test.myMixin();
 }

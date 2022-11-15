@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class Student {
   var name; // public
   var _age; // private _ pose avant variable instence or method
@@ -171,7 +173,7 @@ class Circle extends Shape {
 //inherite by implements (Shape is interface) //// obligatoire de implimente
 //tous instence methodes et instence variables (@override)
 //****** class imlements more class */
-class Triangle implements Shape,Persons {
+class Triangle implements Shape, Persons {
   @override
   String color;
 
@@ -181,7 +183,10 @@ class Triangle implements Shape,Persons {
   @override
   int shadow;
 
-  Triangle(this.color,this.radiaus,this.shadow){
+  @override
+  double adress = 0;
+
+  Triangle(this.color, this.radiaus, this.shadow) {
     print('Constructor');
   }
 
@@ -197,33 +202,42 @@ class Triangle implements Shape,Persons {
     print("myTriangle");
   }
 
-
   @override
-  printAge() {
-    
-  }
-
-  @override
-  printName() {
-    
-  }
-}
-
-//Abstruct classes //// start
-abstract class Persons {
-  printName();
-  printAge();
-}
-
-class professeurs extends Persons {
-  @override
-  printAge() {}
+  printAdress() {}
 
   @override
   printName() {}
 }
 
+//Abstruct classes //// start
+abstract class Persons {
+  late double adress;
+  Persons(this.adress) {
+    print('Persons constructor');
+  }
+  printName();
+  printAdress();
+}
+
+//Abstruct //// ovrride all methode
+class professeurs extends Persons {
+  professeurs(double adress) : super(adress) {
+    print('professeurs constructor');
+  }
+
+  @override
+  printAdress() {
+    print('Adress is $adress');
+  }
+
+  @override
+  printName() {}
+}
+
+//Abstruct //// ovrride same methode so you must make 'abstruct class'
 abstract class etudiants extends Persons {
+  etudiants(super.adress);
+
   @override
   printName() {
     print("object");
@@ -231,3 +245,35 @@ abstract class etudiants extends Persons {
 }
 
 //Abstruct classes //// end
+
+// 94.94. Dart Polymorphism
+
+abstract class MyShape {
+  double get area;
+}
+
+class MyCircle implements MyShape {
+  double radius;
+  MyCircle({this.radius = 0});
+  @override
+  double get area => pi * radius * radius;
+}
+
+class MyTriangle implements MyShape {
+  double width;
+  double hight;
+  MyTriangle({this.width = 0, this.hight = 0});
+  @override
+  double get area => width * hight;
+}
+// End Dart Polymorphism
+
+//96.96. Dart Mixins  (Arabic)
+
+mixin MyMixin {
+  myMixin() {
+    print('Mixiiiin');
+  }
+}
+
+class Test with MyMixin {}
