@@ -277,3 +277,30 @@ mixin MyMixin {
 }
 
 class Test with MyMixin {}
+
+// 97.97. Dart Super Keyword (Arabic) 
+
+class SuperClass1{
+  int number1;
+  SuperClass1(this.number1);
+  int getNumberSuper1() => number1;
+}
+
+class SuperClass2 extends SuperClass1{
+  int number2;
+  SuperClass2(this.number2,num):super(num);
+  int getNumberSuper2() => number2;
+}
+
+class SuperClass3 extends SuperClass2{
+  int number3;
+
+  SuperClass3(this.number3,num1,num2):super(num1,num2);
+  int getNumberSuper3() => number3;
+}
+
+// end Dart Super Keyword
+
+class MyException implements Exception{
+  
+}

@@ -77,6 +77,28 @@ main() {
   shapeArea(MyTriangle(hight: 140, width: 17));
   shapeArea(MyTriangle());
 
+  //mixin
   Test test = Test();
   test.myMixin();
+
+  // Super Keyword 
+
+  SuperClass3 class3 = SuperClass3(23,34,45);
+  print(class3.getNumberSuper1());
+  print(class3.getNumberSuper2());
+  print(class3.getNumberSuper3());
+
+  // Exception
+
+  int x1 =10;
+  int y1 =0;
+  print(x1);
+  print(y1);
+  try{
+  double z1 = x1/y1;
+  print(z1);
+  }on Exception catch(e){
+    print(e);
+  }
+  print('end');
 }
