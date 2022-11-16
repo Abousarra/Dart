@@ -81,24 +81,26 @@ main() {
   Test test = Test();
   test.myMixin();
 
-  // Super Keyword 
+  // Super Keyword
 
-  SuperClass3 class3 = SuperClass3(23,34,45);
+  SuperClass3 class3 = SuperClass3();
   print(class3.getNumberSuper1());
   print(class3.getNumberSuper2());
   print(class3.getNumberSuper3());
 
   // Exception
 
-  int x1 =10;
-  int y1 =0;
+  int x1 = 10;
+  int y1 = 0;
   print(x1);
   print(y1);
-  try{
-  double z1 = x1/y1;
-  print(z1);
-  }on Exception catch(e){
-    print(e);
+  try {
+    double z1 = x1 / y1;
+    print(z1);
+  } catch (e) {
+    print('errrrrror');
+  } finally {
+    print('finally');
   }
   print('end');
 }
